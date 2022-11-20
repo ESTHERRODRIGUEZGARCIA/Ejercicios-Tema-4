@@ -66,4 +66,22 @@ def HuffmanTree(text):
 
     print("EL código es: ", huffmanCode )
     print("El verdadero es: ")
-     
+
+    s = ''
+    for c in text:
+        s += huffmanCode.get(c)
+
+    print("Texto codificado: ", s)
+    print("texto descoodificado: ", end='')
+
+
+    if leaf(root):
+        while root.freq > 0:
+            print(root.ch, end= ' ')
+            root.freq = root.freq - 1
+    else:
+        index = -1
+        while index < len(s) -1:
+            index = decode(root, index, s)
+
+
