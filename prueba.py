@@ -1,4 +1,7 @@
 import heapq
+import sys
+import pickle
+import json as json
 class Queue(object):
 
     def get_probabilities(content):
@@ -53,4 +56,47 @@ class Queue(object):
                 code = elm[-1]
                 res[elm[2]] = code
             pass
-        return res
+        return res  
+    def compress(dic,content):
+        res = ""
+        # Iteramos sobre cada elemento del archivo de entrada
+        for ch in content:
+            code = dic[ch]
+            res = res + code
+        # Agregamos el 1 a la izquierda, y el marcador de final
+        # a la derecha
+        res = '1' + res + dic['end']
+        # Agregamos ceros para que la longitud del resultado
+        # sea un múltiplo de 8
+        res = res + (len(res) % 8 * "0")
+        return int(res,2) # Convertimos a entero! (2 porque es base 2)
+    
+    def store(data,dic,outfile):
+        # Guardamos la cadena de bits en un archivo, que abrimos
+        # en modo binario (por eso 'wb')
+        outf = open(outfile,'wb')
+        pickle.dump(compressed,outf)
+        outf.close()
+
+        # Guardamos el diccionario en otro archivo en formato JSON
+        outf = open(outfile+".dic",'w')
+        json.dump(dic,outf)
+        outf.close()
+        pass
+
+# Leemos el archivo de entrada completo a cont
+    inf = open(sys.argv[1])
+    cont = inf.read()
+    inf.close()
+    # Calculamos la distribución de probabilidad para cada símbolo
+    probs = get_probabilities(cont)
+    # Construimos el árbol de parseo! : )
+    tree = make_tree(probs)
+    # Construimos el diccionario para codificar
+    dic = make_dictionary(tree)
+    # Codificamos el contenido del archivo
+    compressed = compress(dic,cont)
+    # Guardamos todo en disco!
+    store(compressed,dic,sys.argv[2])
+
+    print("Archivo comprimido!")
