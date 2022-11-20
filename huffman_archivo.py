@@ -50,3 +50,5 @@ def HuffmanTree(text):
     freq = {i: text.count(i) for i in set(text)} #freq de cada caracter + dic
 
     pq = [Node(k,v) for k, v in freq.items()]
+    heapq.heapify(pq)
+    
