@@ -51,4 +51,19 @@ def HuffmanTree(text):
 
     pq = [Node(k,v) for k, v in freq.items()]
     heapq.heapify(pq)
-    
+
+    while len(pq) != 1:
+        # eliminar los nodos con la frq más baja de la cola
+        left = heappop(pq)
+        right = heappop(pq)
+        # nuevo nodo interno con dos nodos hijos ( freq = f1+f2)
+        total = left.freq + right.freq
+        heappush(pq, Node(None, total, left, right))
+
+    root = pq[0] #almacena el puntero a la raiz del árbol
+    huffmanCode = {}
+    encode(root, '', huffmanCode)
+
+    print("EL código es: ", huffmanCode )
+    print("El verdadero es: ")
+     
