@@ -1,6 +1,9 @@
 import heapq
 from heapq import heappop, heappush
-class Node(object):
+
+def leaf(root):
+    return root.left is None and root.right is None
+class Node:
     def __init__(self, ch, freq, left=None, right=None):
         self.ch = ch
         self.freq = freq
@@ -12,16 +15,11 @@ class Node(object):
     def __lt__(self, other):
         return self.freq < other.freq
 
-
-
-def leaf(root):
-    return root.left is None and root.right is None
-
 #creo árbol y almaceno los códigos de Huffman en un diccionario
 
 def encode(root, s, huffman_code):
     if root is None:
-        return None
+        return 
     
     if leaf(root):
         huffman_code[root.ch] = s if len(s) > 0 else '1'
@@ -45,7 +43,7 @@ def decode(root, index, s):
 
 def HuffmanTree(text):
     if len(text) == 0: # cadena vacía
-        return None
+        return 
 
     freq = {i: text.count(i) for i in set(text)} #freq de cada caracter + dic
 
@@ -65,19 +63,19 @@ def HuffmanTree(text):
     encode(root, '', huffmanCode)
 
     print("EL código es: ", huffmanCode )
-    print("El verdadero es: ")
+    print("El verdadero es: ", text)
 
     s = ''
     for c in text:
         s += huffmanCode.get(c)
 
     print("Texto codificado: ", s)
-    print("texto descoodificado: ", end='')
+    print("texto descoodificado: ", end=' ')
 
 
     if leaf(root):
         while root.freq > 0:
-            print(root.ch, end= ' ')
+            print(root.ch, end= '')
             root.freq = root.freq - 1
     else:
         index = -1
@@ -85,5 +83,5 @@ def HuffmanTree(text):
             index = decode(root, index, s)
 
 if __name__ == '__main__':
-    text = 'Probando texto'
+    text = str(input("Introduzca el texto a estudiar: "))
     HuffmanTree(text)
