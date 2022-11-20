@@ -84,4 +84,6 @@ def HuffmanTree(text):
         while index < len(s) -1:
             index = decode(root, index, s)
 
-
+if __name__ == '__main__':
+    text = 'Probando texto'
+    HuffmanTree(text)
