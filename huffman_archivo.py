@@ -1,16 +1,8 @@
-import os
-from time import time
+class Node(object):
+    def __init__(self, ch, freq, left=None, right=None):
+        self.ch = ch
+        self.freq = freq
+        self.left = left
+        self.right = right
 
-class Node:
-    #declarar variables
-    prob = ''
-
-class Huffman:
-    #distintas variables
-    tree = None
-    Root = None
-
-    def __init__(self, tree=None, root=None):
-        self.tree = tree
-        self.root = root
-        
+    
