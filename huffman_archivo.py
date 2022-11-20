@@ -1,4 +1,5 @@
-
+import heapq
+from heapq import heappop, heappush
 class Node(object):
     def __init__(self, ch, freq, left=None, right=None):
         self.ch = ch
