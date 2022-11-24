@@ -7,7 +7,7 @@ El Cristo Redentor (Brasil) ...
 Taj Mahal (India)
 '''
 
-#from grafo import grafo
+from grafo import Grafo
 
 grafo = Grafo("LAS 7 MARAVILLAS DEL MUNDO")
 grafo.agregar("La Gran Muralla")
