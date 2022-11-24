@@ -25,13 +25,24 @@ class Huffman():
         pos = True
         while pos:
             if len(clave) > 0:
-                control = False
+                pos = False
                 if clave[0] == "1":
                     clave.pop(0)
                     if raiz.der.info is not None:
                         print(raiz.der.info, end=" ")
                     else:
                         pos = True
+                        self.decode(clave, raiz.der)
+                elif clave[0] == "0":
+                    clave.pop(0)
+                    if raiz.izq.info is not None:
+                        print(raiz.izq.info, end=" ")
+                    else:
+                        pos = True
+                        self.decode(clave, raiz.izq)
+            else:
+                pos = False
+                    
 
             
 
