@@ -17,3 +17,8 @@ grafo.agregar("Chichen Itza")
 grafo.agregar("EL Cristo Redentor")
 grafo.agregar("Taj Mahal")
 
+grafo.preorden()
+grafo.inorden()
+grafo.postorden()
+
+busqueda = input("Busca algo en el grafo: ")
