@@ -86,5 +86,5 @@ class HuffmanTree:
                 index = self.decode(root, index, s)
 
     if __name__ == '__main__':
-        text = str(input("Introduzca el texto a estudiar: "))
+        text = 'AF130MT'
         HuffmanTree(text)
