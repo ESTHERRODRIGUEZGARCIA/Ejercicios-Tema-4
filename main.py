@@ -36,4 +36,4 @@ else:
     print(f"{busqueda} sí existe. ")
 
 #b)
-grafo.relacionar(A, B)
+# grafo.relacionar(A, B)
