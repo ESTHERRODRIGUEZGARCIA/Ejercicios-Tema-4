@@ -9,6 +9,21 @@ class nodoArbol():
 class Huffman():
     def __init__(self):
         self.lista = []
-    
+
     def agregar(self, nodo):
         self.lista.append(nodo)
+
+    def encode(self, texto):
+        texto = list(texto)
+        tabla = {"A": 0.2, "F": 0.17, "1": 0.13, "3": 0.21, "0": 0.05, "M": 0.09, "T": 0.15 }
+        while len(texto) > 0:
+            if texto[0] in tabla:
+                print(tabla[texto[0]], end=" ")
+                texto.pop(0)
+    
+    def decode(self, clave, raiz):
+        pos = True
+        while pos:
+            if len(clave) > 0:
+                clave.pop(0)
+
