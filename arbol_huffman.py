@@ -42,7 +42,13 @@ class Huffman():
                         self.decode(clave, raiz.izq)
             else:
                 pos = False
-                    
 
-            
+    def lanzador():
+        eleccion = int(input("QUé quiere realizar: "))
+        if eleccion == 1:
+            encode()
+
+
+if __name__ == "__main__":
+    lanzador()
 
