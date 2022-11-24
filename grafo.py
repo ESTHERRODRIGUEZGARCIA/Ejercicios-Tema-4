@@ -33,7 +33,7 @@ class Grafo:
     def __inorden(self, nodo):
         if nodo is not None:
             self.__inorden(nodo.izquierda)
-            print(nodo.info, end=", ")
+            print(nodo.info)
             self.__inorden(nodo.derecha)
 
         else:
@@ -41,7 +41,7 @@ class Grafo:
 
     def __preorden(self, nodo):
         if nodo is not None:
-            print(nodo.info, end=", ")
+            print(nodo.info)
             self.__preorden(nodo.izquierda)
             self.__preorden(nodo.derecha)
 
