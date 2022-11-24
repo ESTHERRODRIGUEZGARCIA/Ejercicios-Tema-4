@@ -76,5 +76,6 @@ class Grafo:
         return self.__buscar(self.raiz, busqueda)
 
     def relacionar(self, vector1, vector2):
-        return self.relacionar(self.raiz, vector1, vector2)
+        arreglo = self.__relacionar(self.raiz, vector1, vector2)
+        return arreglo
 
