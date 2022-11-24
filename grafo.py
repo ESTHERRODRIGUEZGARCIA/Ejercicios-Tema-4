@@ -49,7 +49,7 @@ class Grafo:
         if nodo is not None:
             self.__postorden(nodo.izquierda)
             self.__postorden(nodo.derecha)
-            print(nodo.info, end=", ")
+            print(nodo.info)
 
 # funciones públicas:
 
@@ -57,17 +57,17 @@ class Grafo:
         self.__agregar_recursivo(self.raiz, info)
 
     def inorden(self):
-        print("Imprimiendo árbol inorden: ")
+        print("Imprimiendo árbol inorden: \n")
         self.__inorden(self.raiz)
         print("")
 
     def preorden(self):
-        print("Imprimiendo árbol preorden: ")
+        print("Imprimiendo árbol preorden: \n")
         self.__preorden(self.raiz)
         print("")
 
     def postorden(self):
-        print("Imprimiendo árbol postorden: ")
+        print("Imprimiendo árbol postorden: \n")
         self.__postorden(self.raiz)
         print("")
 
