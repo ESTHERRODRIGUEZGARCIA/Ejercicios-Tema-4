@@ -53,23 +53,23 @@ class Grafo:
 
 # funciones públicas:
 
-def agregar(self, info):
-    self.__agregar_recursivo(self.raiz, info)
+    def agregar(self, info):
+        self.__agregar_recursivo(self.raiz, info)
 
-def inorden(self):
-    print("Imprimiendo árbol inorden: ")
-    self.__inorden(self.raiz)
-    print("")
+    def inorden(self):
+        print("Imprimiendo árbol inorden: ")
+        self.__inorden(self.raiz)
+        print("")
 
-def preorden(self):
-    print("Imprimiendo árbol preorden: ")
-    self.__preorden(self.raiz)
-    print("")
+    def preorden(self):
+        print("Imprimiendo árbol preorden: ")
+        self.__preorden(self.raiz)
+        print("")
 
-def postorden(self):
-    print("Imprimiendo árbol postorden: ")
-    self.__postorden(self.raiz)
-    print("")
+    def postorden(self):
+        print("Imprimiendo árbol postorden: ")
+        self.__postorden(self.raiz)
+        print("")
 
-def buscar(self, busqueda):
-    return self.__buscar(self.raiz, busqueda)
+    def buscar(self, busqueda):
+        return self.__buscar(self.raiz, busqueda)
