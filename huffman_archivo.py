@@ -3,7 +3,7 @@ from heapq import heappop, heappush
 
 def leaf(root):
     return root.left is None and root.right is None
-class Node(object):
+class Node:
     def __init__(self, ch, freq, left=None, right=None):
         self.ch = ch
         self.freq = freq
@@ -16,21 +16,21 @@ class Node(object):
         return self.freq < other.freq
 
 #creo árbol y almaceno los códigos de Huffman en un diccionario
-class HuffmanTree(object):
+class HuffmanTree:
     def __init__(self, freq):
         self.pq = [Node(k,v) for k, v in freq.items()]
         
-    def encode(root, s, huffman_code):
+    def encode(self, root, s, huffman_code):
         if root is None:
             return 
         
         if leaf(root):
             huffman_code[root.ch] = s if len(s) > 0 else '1'
 
-        encode(root.left, s + '0', huffman_code)
-        encode(root.left, s + '1', huffman_code)
+        self.encode(root.left, s + '0', huffman_code)
+        self.encode(root.left, s + '1', huffman_code)
 
-    def decode(root, index, s):
+    def decode(self, root, index, s):
         if root is None:
             return index
         
@@ -40,11 +40,11 @@ class HuffmanTree(object):
         
         index = index + 1
         root = root.left if s[index] == '0' else root.right
-        return decode(root, index, s)
+        return self.decode(root, index, s)
 
         # Construye 'Huffman Tree' y decodifica el texto de entrada dado
 
-    def HuffmanTree(text):
+    def HuffmanTree(self, text):
         if len(text) == 0: # cadena vacía
             return 
 
@@ -63,7 +63,7 @@ class HuffmanTree(object):
 
         root = pq[0] #almacena el puntero a la raiz del árbol
         huffmanCode = {}
-        encode(root, '', huffmanCode)
+        self.encode(root, '', huffmanCode)
 
         print("EL código es: ", huffmanCode )
         print("El verdadero es: ", text)
@@ -83,7 +83,7 @@ class HuffmanTree(object):
         else:
             index = -1
             while index < len(s) -1:
-                index = decode(root, index, s)
+                index = self.decode(root, index, s)
 
     if __name__ == '__main__':
         text = str(input("Introduzca el texto a estudiar: "))
