@@ -1,6 +1,7 @@
 from nodo3 import Nodo
 
 class Grafo:
+    arreglo = []
     def __init__(self, info):
         self.raiz = Nodo(info)
 
@@ -54,7 +55,7 @@ class Grafo:
 # funciones públicas:
 
     def agregar(self, info):
-        self.__agregar_recursivo(self.raiz, info)
+        arreglo = self.__agregar_recursivo(self.raiz, info)
 
     def inorden(self):
         print("Imprimiendo árbol inorden: \n")
@@ -73,3 +74,7 @@ class Grafo:
 
     def buscar(self, busqueda):
         return self.__buscar(self.raiz, busqueda)
+
+    def relacionar(self, vector1, vector2):
+        return self.relacionar(self.raiz, vector1, vector2)
+
