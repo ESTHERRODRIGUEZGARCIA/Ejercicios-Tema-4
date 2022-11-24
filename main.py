@@ -1,4 +1,5 @@
-''' La Gran Muralla (China) Parte de la Gran Muralla China. ...
+'''
+La Gran Muralla (China) Parte de la Gran Muralla China. ...
 Petra (Jordania) La fachada principal de Petra (Jordania)EM. ...
 El Coliseo (Italia) El Coliseo de Roma (Italia)EM. ...
 Chichen Itza (México) El Chichen Itza en México. ...
@@ -9,11 +10,12 @@ Taj Mahal (India)
 
 from grafo import Grafo
 
-grafo = Grafo("LAS 7 MARAVILLAS DEL MUNDO")
+grafo = Grafo("LAS 7 MARAVILLAS DEL MUNDO: ")
 grafo.agregar("La Gran Muralla")
 grafo.agregar("Petra")
 grafo.agregar("El Coliseo")
 grafo.agregar("Chichen Itza")
+grafo.agregar("Machu Picchu")
 grafo.agregar("EL Cristo Redentor")
 grafo.agregar("Taj Mahal")
 
