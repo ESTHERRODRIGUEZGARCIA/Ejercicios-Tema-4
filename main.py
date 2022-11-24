@@ -14,15 +14,15 @@ from grafo import Grafo
 
 '''
 
-
+#a) VECTORES
 grafo = Grafo("AA: LAS 7 MARAVILLAS DEL MUNDO: \n")
-grafo.agregar("La Gran Muralla, China, Arquitectónica \n")
-grafo.agregar("Petra, Jordania, Arquitectónica \n")
-grafo.agregar("El Coliseo, Italia, Arquitectónica \n")
-grafo.agregar("Chichen Itza, México, Arquitectónica \n")
-grafo.agregar("Machu Picchu, Perú, Arquitectónica \n")
-grafo.agregar("EL Cristo Redentor, Brasil, Arquitectónica \n")
-grafo.agregar("Taj Mahal, India, Arquitectónica \n")
+grafo.agregar("La Gran Muralla, China, Arquitectónica (7) \n")
+grafo.agregar("Petra, Jordania, Arquitectónica (5) \n")
+grafo.agregar("El Coliseo, Italia, Arquitectónica (4) \n")
+grafo.agregar("Chichen Itza, México, Arquitectónica (1) \n")
+grafo.agregar("Machu Picchu, Perú, Arquitectónica (2) \n")
+grafo.agregar("EL Cristo Redentor, Brasil, Arquitectónica (3) \n")
+grafo.agregar("Taj Mahal, India, Arquitectónica (6) \n")
 
 grafo.preorden()
 grafo.inorden()
@@ -34,3 +34,6 @@ if nodo is None:
     print(f"{busqueda} no existe. ")
 else:
     print(f"{busqueda} sí existe. ")
+
+#b)
+grafo.relacionar("A", "B")
