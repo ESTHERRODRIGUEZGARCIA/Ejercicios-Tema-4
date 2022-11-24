@@ -22,3 +22,8 @@ grafo.inorden()
 grafo.postorden()
 
 busqueda = input("Busca algo en el grafo: ")
+nodo = grafo.buscar(busqueda)
+if nodo is None:
+    print(f"{busqueda} no existe. ")
+else:
+    print(f"{busqueda} sí existe. ")
