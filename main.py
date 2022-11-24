@@ -10,14 +10,19 @@ Taj Mahal (India)
 
 from grafo import Grafo
 
-grafo = Grafo("LAS 7 MARAVILLAS DEL MUNDO: ")
-grafo.agregar("La Gran Muralla")
-grafo.agregar("Petra")
-grafo.agregar("El Coliseo")
-grafo.agregar("Chichen Itza")
-grafo.agregar("Machu Picchu")
-grafo.agregar("EL Cristo Redentor")
-grafo.agregar("Taj Mahal")
+'''
+
+'''
+
+
+grafo = Grafo("LAS 7 MARAVILLAS DEL MUNDO: \n")
+grafo.agregar("La Gran Muralla, China, Arquitectónica \n")
+grafo.agregar("Petra, Jordania, Arquitectónica \n")
+grafo.agregar("El Coliseo, Italia, Arquitectónica \n")
+grafo.agregar("Chichen Itza, México, Arquitectónica \n")
+grafo.agregar("Machu Picchu, Perú, Arquitectónica \n")
+grafo.agregar("EL Cristo Redentor, Brasil, Arquitectónica \n")
+grafo.agregar("Taj Mahal, India, Arquitectónica \n")
 
 grafo.preorden()
 grafo.inorden()
