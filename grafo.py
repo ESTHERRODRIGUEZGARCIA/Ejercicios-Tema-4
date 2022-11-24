@@ -30,7 +30,26 @@ class Grafo:
         else:
             return self.__buscar(nodo.derecha, busqueda)
 
+    def __inorden(self, nodo):
+        if nodo is not None:
+            self.__inorden(nodo.izquierda)
+            print(nodo.info, end=", ")
+            self.__inorden(nodo.derecha)
 
+        else:
+            pass
+
+    def __preorden(self, nodo):
+        if nodo is not None:
+            print(nodo.info, end=", ")
+            self.__preorden(nodo.izquierda)
+            self.__preorden(nodo.derecha)
+
+    def __postorden(self, nodo):
+        if nodo is not None:
+            self.__postorden(nodo.izquierda)
+            self.__postorden(nodo.derecha)
+            print(nodo.info, end=", ")
 
 
 
