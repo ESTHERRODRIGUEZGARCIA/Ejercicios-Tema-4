@@ -2,10 +2,7 @@ import csv
 with open('pokemon.csv', 'r') as f:
     reader = csv.reader(f)
     lista = list(reader)
-    print(lista)
-    print(lista[0])
-    print(lista[1])
-    print(lista[2])
+    
 
 
 nombres = []
@@ -70,4 +67,28 @@ def tipos():
     print(tipos)
 tipos()
 
+def main2():
+    print("1. Buscar pokemon")
+    print("2. Buscar tipo")
+    print("3. Ordenar pokemon")
 
+    print("4. Debiles")
+    print("5. Tipos")
+    opcion = int(input("Ingrese una opcion: "))
+    if opcion == 1:
+        buscar_pokemon()
+    elif opcion == 2:
+        buscar_tipo()
+    elif opcion == 3:
+        ordenar_pokemon()
+    elif opcion == 4:
+        debiles()
+    elif opcion == 5:
+        tipos()
+    else:
+        print("Opción incorrecta.")
+main2()
+
+if __name__ == "__main__":
+    main2()
+    
