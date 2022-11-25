@@ -36,4 +36,6 @@ else:
     print(f"{busqueda} sí existe. ")
 
 #b)
-# grafo.relacionar(A, B)
+# grafo: cada una debe estar relacionada con las otras seis de su tipo, para lo que se debe almacenar la distancia que las separa;
+
+grafo.relacionar(A, B, 1)

@@ -3,3 +3,8 @@ class Nodo:
         self.info = info
         self.izquierda = None
         self.derecha = None
+
+    def __str__(self):
+        return str(self.info)
+
+
