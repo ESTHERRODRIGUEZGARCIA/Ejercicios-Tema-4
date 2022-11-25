@@ -39,4 +39,35 @@ def buscar_pokemon():
             print(lista[i])
 buscar_pokemon()
 
+# mostrar todos los nombres de todos los Pokémons de un determinado tipo agua, fuego, planta y eléctrico;
+def buscar_tipo():
+    tipo = input("Ingrese el tipo de pokemon que desea buscar: ")
+    for i in range(len(lista)):
+        if tipo in lista[i][2]:
+            print(lista[i][0])
+buscar_tipo()
+
+#realizar un listado en orden ascendente por número y nombre de Pokémon, y además un listado por nivel por nombre;
+def ordenar_pokemon():
+    lista.sort(key=lambda x: x[1])
+    print(lista)
+ordenar_pokemon()
+
+#mostrar todos los Pokémons que son débiles frente a Jolteon, Lycanroc y Tyrantrum;
+def debiles():
+    debiles = ["Jolteon", "Lycanroc", "Tyrantrum"]
+    for i in range(len(lista)):
+        for j in range(len(debiles)):
+            if debiles[j] in lista[i][3]:
+                print(lista[i][0])
+debiles()
+
+# mostrar todos los tipos de Pokémons y cuántos hay de cada tipo.
+def tipos():
+    tipos = []
+    for i in range(len(lista)):
+        tipos.append(lista[i][2])
+    print(tipos)
+tipos()
+
 
